@@ -4,6 +4,9 @@ package aplicacion.despaching.modelos;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,8 +23,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class UsuarioEntrada {
 
 @JsonProperty("usuario")
+@NotNull
 private String usuario;
 @JsonProperty("passwd")
+@NotNull
+@Size(min=5, max=8)
 private String passwd;
 @JsonIgnore
 private Map<String, Object> additionalProperties = new HashMap<String, Object>();
