@@ -29,12 +29,33 @@
         </a>
         <h1>Iniciar sesion</h1>
         <fieldset>
-            <div>
-                Username: <input type="text" name="username">
-            </div>
-            <div >
-                Password: <input type="password" name="password">
-            </div>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <th>
+                        <div> 
+                            <label for="username">Usuario</label>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <input type="input" id="username">
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div> 
+                            <label for="password">Password</label>
+                        </div>
+                    </th>
+                    <th>
+                        <div >
+                            <input type="password" id="password">
+                        </div>
+                    </th>
+                </tr>
+            </table>
+            
             <div>
                 <input class="btnEnviar" style="margin-top: 10px;" type="button" onclick="Enviar()" value="Enviar">
             </div>
