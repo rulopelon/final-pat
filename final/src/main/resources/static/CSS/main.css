@@ -4,7 +4,15 @@
 
 
 .btnEnviar{
-    background-color:mediumseagreen;
+    background-color:rgb(194, 205, 231);
 }
 
+.RecuContra{
+    border:none;
+    margin-top: 10px;
+    border-bottom: 1px solid;
+    color:cadetblue;
+    background-color: white;
+    overflow:visible;
+}
 

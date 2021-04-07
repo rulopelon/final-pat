@@ -6,7 +6,7 @@
 <head>
 
     <title> Despaching </title>
-    <meta charset="UTF-16">
+    <meta charset="UTF-8">
 
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -23,20 +23,24 @@
 <body>
 
 <div> 
+
     <form id="formulario" class="centrar" style="margin-top: 10%;"> 
+
+        
         <a href= "./index.html">
             <img src="https://img.icons8.com/dusk/185/000000/add-user-group-man-woman.png" alt="Error en la carga">
         </a>
-        <h1>Iniciar sesion</h1>
+        <h1>Despaching</h1>
+        
         <fieldset>
-            <table style="margin-left: auto; margin-right: auto;">
+            <table style="margin-left: auto; margin-right: auto; margin-top: 10px;">
                 <tr>
                     <th>
                         <div> 
                             <label for="username">Usuario</label>
                         </div>
                     </th>
-                    <th>
+                    <th style="padding-left:10px;">
                         <div>
                             <input type="input" id="username">
                         </div>
@@ -45,11 +49,11 @@
                 <tr>
                     <th>
                         <div> 
-                            <label for="password">Password</label>
+                            <label for="password">Contraseña</label>
                         </div>
                     </th>
                     <th>
-                        <div >
+                        <div style="padding-left: 10px;">
                             <input type="password" id="password">
                         </div>
                     </th>
@@ -57,10 +61,18 @@
             </table>
             
             <div>
-                <input class="btnEnviar" style="margin-top: 10px;" type="button" onclick="Enviar()" value="Enviar">
+                <input class="btnEnviar btn btn-lg" style="margin-top: 10px;" type="button" onclick="Enviar()" value="Iniciar Sesion">
             </div>
         </fieldset>
+
+        <div>
+            <input class="RecuContra btn btn-lg" onclick="RecuperarContraseña()" value="¿Olvidaste la contraseña?" type="button">
+        </div>
     </form>
 </div>
+
+<footer class="fixed-bottom">
+    <p>Despaching</p>
+</footer>
 
 </body>

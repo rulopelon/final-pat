@@ -1,6 +1,6 @@
 function EnviarLogIn(url){
 
-    const User = {
+    const usuario = {
         "username" : document.getElementById("username").value,
         "passwd"   : document.getElementById("password").value
     }
@@ -34,4 +34,5 @@ function EnviarLogIn(url){
 	})
     console.log(User)
     return respuesta
+    console.log(usuario)
 }
