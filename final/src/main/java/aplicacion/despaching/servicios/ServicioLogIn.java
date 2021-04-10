@@ -7,21 +7,35 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import aplicacion.despaching.modelos.Usuario;
+import aplicacion.despaching.respositorios.RepositorioUsuarios;
 
 @Service
 public class ServicioLogIn {
 	@Autowired
 	ServicioEmail servicioEmail;
+	@Autowired
+	RepositorioUsuarios repositorioUsuarios;
+	@Value("${dirEmail}")
+	private String direccionEmail;
+	 
 	public Usuario logIn(String user, String passwd){
 		return null;
 		
 	}
 	public boolean recuperarPasswd(String usuario){
-		@Value("${dirEmail}")
-		private String direccionEmail;
-		private String contenido = "Su nueva contraseña es: "+generarContrasena();
+		boolean respuesta = false;
 		
-		servicioEmail.enviarEmail(destinatario,direccionEmail,asunto,contenido);
+		final String contenido = "Su nueva contraseña es: "+generarContrasena();
+		final String destinatario = repositorioUsuarios.cargarEmail(usuario);
+		if(destinatario!= null){
+			respuesta = true;
+			final  String asunto = "Recuperacion Contraseña";
+			servicioEmail.enviarEmail(destinatario,direccionEmail,asunto,contenido);
+		}else {
+			respuesta = false;
+		}
+
+		return respuesta;
 	}
 	
 	private static String generarContrasena() {
