@@ -1,4 +1,16 @@
 .botonReserva:hover{
-	    background-color:rgb(194, 205, 231);
+	    background-color:rgb(114, 146, 157);
 	
+}
+.botonReserva{
+	    background-color:rgb(218, 237, 244);
+		border-radius: 1em;
+}
+#boton_regreso{
+	
+  float: left;
+
+}
+#imagen_usuario{
+	float:right;
 }
