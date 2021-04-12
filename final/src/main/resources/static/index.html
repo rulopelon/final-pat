@@ -23,51 +23,31 @@
 
 
 
-
 </head>
 
-<body class="overflow-auto">
+<body>
 
-<div> 
+<div name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-    <form id="formulario" class="centrar form-floating" style="margin-top: 10%;"> 
+    <form id="formulario" class="centrar form-floating" style="margin-top: 5vw;"> 
 
         
         <a href= "./index.html">
-            <img src="https://img.icons8.com/dusk/185/000000/add-user-group-man-woman.png" alt="Error en la carga">
+            <img class="ResponsiveImgTitle" src="https://img.icons8.com/dusk/185/000000/add-user-group-man-woman.png" alt="Error en la carga">
         </a>
-        <h1>Despaching</h1>
+        <h1 class="fontTitle">Despaching</h1>
         
         <fieldset>
-            <table style="margin-left: auto; margin-right: auto; margin-top: 10px;">
-                <tr>
-                    <th>
-                        <div> 
-                            <label for="username">Usuario</label>
-                        </div>
-                    </th>
-                    <th style="padding-left:10px;">
-                        <div>
-                            <input type="input" id="username">
-                        </div>
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <div> 
-                            <label for="password">Contraseña</label>
-                        </div>
-                    </th>
-                    <th>
-                        <div style="padding-left: 10px;">
-                            <input type="password" id="password">
-                        </div>
-                    </th>
-                </tr>
-            </table>
-            
-            <div>
-                <input class="btnEnviar btn btn-lg" style="margin-top: 10px;" type="button" onclick="EnviarLogIn('/login/log')" value="Iniciar Sesion">
+            <div style="margin-left: auto; margin-right: auto; margin-top: 1vw;">
+                <div style="width: auto; height: auto;"> 
+                    <input placeholder="Usuario"  class="loginfont" type="input" id="username">
+                </div>
+
+                <div> 
+                    <input placeholder="Contraseña" class="loginfont" type="password" id="password">
+                </div>
+
+                <input class="btn btnEnviar" style="margin-top: 10px;" type="button" onclick="EnviarLogIn('/login/log')" value="Iniciar Sesion">
             </div>
         </fieldset>
 
