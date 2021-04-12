@@ -3,6 +3,10 @@ package aplicacion.despaching.modelos;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,11 +21,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 "nombre",
 "apellido"
 })
+@Table("Usuarios")
 @Generated("jsonschema2pojo")
 public class Usuario {
 
 @JsonProperty("correo")
 private String correo;
+@Id
 @JsonProperty("id")
 private String id;
 @JsonProperty("nombre")
