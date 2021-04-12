@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import aplicacion.despaching.modelos.Usuario;
-import aplicacion.despaching.respositorios.RepositorioUsuarios;
+import aplicacion.despaching.repositorios.RepositorioUsuarios;
 
 @Service
 public class ServicioLogIn {
@@ -52,4 +52,5 @@ public class ServicioLogIn {
 	
 	   return contrasenaNueva;
 	}
+	
 }
