@@ -10,9 +10,12 @@ import aplicacion.despaching.repositorios.RepositorioUsuarios;
 public class ServicioUsuarios {
 	@Autowired
 	RepositorioUsuarios repositorioUsuarios;
-	public void borrarUsuario(String id) {
+	public void borrarUsuarioById(String id) {
 		Usuario usuarioBorrar = repositorioUsuarios.cargarUsuarioById(id);
 		repositorioUsuarios.delete(usuarioBorrar);
+	}
+	public void borrarUsuario(Usuario user) {
+		repositorioUsuarios.delete(user);
 	}
 	public void addUsuario(Usuario usuario) {
 		repositorioUsuarios.save(usuario);
