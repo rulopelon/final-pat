@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import aplicacion.despaching.modelos.Alumno;
+import aplicacion.despaching.modelos.Profesor;
 import aplicacion.despaching.modelos.Reserva;
 import aplicacion.despaching.repositorios.RepositorioReservas;
 
@@ -37,7 +39,7 @@ public class ServicioReservas {
 		return arrayReservas;
 	}
 	public ArrayList<Reserva> cargarReservasAlumno(Alumno alumno){
-		List<Reserva> reservas = repositorioReservas.getReservasAlumnoById(alumno.getId();
+		List<Reserva> reservas = repositorioReservas.getReservasAlumnoById(alumno.getId());
 		ArrayList<Reserva> arrayReservas = new ArrayList<Reserva>(reservas);
 		return arrayReservas;
 	}
