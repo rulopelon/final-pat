@@ -19,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 "correo",
 "id",
 "nombre",
-"apellido"
+"apellido",
+"rol"
 })
 @Table("Usuarios")
 @Generated("jsonschema2pojo")
@@ -34,16 +35,19 @@ private String id;
 private String nombre;
 @JsonProperty("apellido")
 private String apellido;
+@JsonProperty("rol")
+private String rol;
 
 public Usuario(String correo) {
     this.setCorreo(correo);
 }
 
-public Usuario(String correo, String nombre, String apellido, String id) {
+public Usuario(String correo, String nombre, String apellido, String id,String rol) {
     this(correo);
     this.setNombre(nombre);
     this.setApellido(apellido);
     this.setId(id);
+    this.setRol(rol);
 }
 
 public Usuario(String nombre, String apellido, String id) {
@@ -59,6 +63,7 @@ private Map<String, Object> additionalProperties = new HashMap<String, Object>()
 public String getCorreo() {
 return correo;
 }
+
 
 @JsonProperty("correo")
 public void setCorreo(String correo) {
@@ -94,6 +99,15 @@ return apellido;
 public void setApellido(String apellido) {
 this.apellido = apellido;
 }
+@JsonProperty("rol")
+public String getRol() {
+return rol;
+}
+
+@JsonProperty("rol")
+public void setRol(String rol) {
+this.rol = rol;
+}
 
 @JsonAnyGetter
 public Map<String, Object> getAdditionalProperties() {
@@ -125,8 +139,13 @@ sb.append("apellido");
 sb.append('=');
 sb.append(((this.apellido == null)?"<null>":this.apellido));
 sb.append(',');
+sb.append("rol");
+sb.append('=');
+sb.append(((this.rol == null)?"<null>":this.rol));
+sb.append(',');
 sb.append("additionalProperties");
 sb.append('=');
+
 sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
 sb.append(',');
 if (sb.charAt((sb.length()- 1)) == ',') {
@@ -145,6 +164,7 @@ result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalP
 result = ((result* 31)+((this.nombre == null)? 0 :this.nombre.hashCode()));
 result = ((result* 31)+((this.correo == null)? 0 :this.correo.hashCode()));
 result = ((result* 31)+((this.apellido == null)? 0 :this.apellido.hashCode()));
+result = ((result* 31)+((this.rol == null)? 0 :this.rol.hashCode()));
 return result;
 }
 
