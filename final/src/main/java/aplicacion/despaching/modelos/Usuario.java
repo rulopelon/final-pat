@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.relational.core.mapping.Table;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -49,7 +50,7 @@ public Usuario(String correo, String nombre, String apellido, String id,String r
     this.setId(id);
     this.setRol(rol);
 }
-
+@PersistenceConstructor
 public Usuario(String correo, String nombre, String apellido, String id) {
     this(correo);
     this.setNombre(nombre);
