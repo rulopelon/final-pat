@@ -26,7 +26,7 @@ public class controlerLogin {
 	public ResponseEntity logIn(@RequestBody @Valid UsuarioEntrada usuario){
 		ResponseEntity respuesta;
 		Usuario usuarioRespuesta = servicioLogin.logIn(usuario.getUsuario(), usuario.getPasswd());
-		if(	usuarioRespuesta != null){
+		if(usuarioRespuesta != null){
 			respuesta = new ResponseEntity<Usuario>(usuarioRespuesta,HttpStatus.OK);
 			
 		}else {

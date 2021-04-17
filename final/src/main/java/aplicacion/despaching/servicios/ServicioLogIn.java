@@ -19,7 +19,7 @@ public class ServicioLogIn {
 	private String direccionEmail;
 	 
 	public Usuario logIn(String user, String passwd){
-		return null;
+		return repositorioUsuarios.cargarUsuarioById(user);
 		
 	}
 	public boolean recuperarPasswd(String usuario){

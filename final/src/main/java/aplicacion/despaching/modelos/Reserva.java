@@ -14,17 +14,17 @@ import lombok.Data;
 @Table("Reservas")
 public class Reserva {
 	@Id
-	@Column("idProfesor")
-	private String clave;
+	@Column("idReserva")
+	private int idReserva;
 	private  int dia;
 	private  int mes;
 	private  int ano;
 	private  int hora;
 	private  int minuto;
-	@MappedCollection(idColumn = "alumno")
+	@MappedCollection(idColumn = "idAlumno")
 	private Set<Alumno> alumnos = new HashSet<>();
 	
-	@MappedCollection(idColumn = "profesor")
+	@MappedCollection(idColumn = "id")
 	private Set<Profesor> profesores = new HashSet<>();
 
 	public void addAlumno(Alumno alumno) {
