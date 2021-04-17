@@ -50,6 +50,13 @@ public Usuario(String correo, String nombre, String apellido, String id,String r
     this.setRol(rol);
 }
 
+public Usuario(String correo, String nombre, String apellido, String id) {
+    this(correo);
+    this.setNombre(nombre);
+    this.setApellido(apellido);
+    this.setId(id);
+}
+
 public Usuario(String nombre, String apellido, String id) {
     this.nombre = nombre;
     this.apellido = apellido;
