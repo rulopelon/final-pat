@@ -6,25 +6,47 @@ import org.springframework.data.relational.core.mapping.Table;
 
 @Table("Alumnos")
 
-public class Alumno extends Usuario{
+public class Alumno {
 	@Id
 	@Column("idAlumno")
 	String idAlumno;
-
-	public Alumno(String correo, String nombre, String apellido, String id, String rol) {
-		super(correo, nombre, apellido, id, rol);
-		// TODO Auto-generated constructor stub
+	
+	private String nombre;
+	private String apellidos;
+	private String correo;
+	public Alumno(String idAlumno, String nombre, String apellidos, String correo) {
+		super();
+		this.idAlumno = idAlumno;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.correo = correo;
 	}
-
-	public Alumno(String nombre, String apellido, String id) {
-		super(nombre, apellido, id);
-		// TODO Auto-generated constructor stub
+	public String getIdAlumno() {
+		return idAlumno;
 	}
-
-	public Alumno(String correo) {
-		super(correo);
-		// TODO Auto-generated constructor stub
+	public void setIdAlumno(String idAlumno) {
+		this.idAlumno = idAlumno;
 	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellidos() {
+		return apellidos;
+	}
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	public String getCorreo() {
+		return correo;
+	}
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+	
+	
 	
 	
 

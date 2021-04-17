@@ -39,7 +39,7 @@ public class ServicioReservas {
 		return arrayReservas;
 	}
 	public ArrayList<Reserva> cargarReservasAlumno(Alumno alumno){
-		List<Reserva> reservas = repositorioReservas.getReservasAlumnoById(alumno.getId());
+		List<Reserva> reservas = repositorioReservas.getReservasAlumnoById(alumno.getIdAlumno());
 		ArrayList<Reserva> arrayReservas = new ArrayList<Reserva>(reservas);
 		return arrayReservas;
 	}
