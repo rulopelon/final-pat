@@ -15,4 +15,6 @@ public interface RepositorioUsuarios extends CrudRepository<Usuario,String>{
 	
 	@Query("SELECT * FROM Usuarios WHERE id=:id and contrasena=:contrasena")
 	 public Usuario cargarUsuarioByIdPass(@Param("id") String id,@Param("contrasena") String contrasena);
+	@Query("UPDATE FROM Usuarios SET contrasena = :contrasena WHERE id=:id ")
+	 public void updateContrasena(@Param("id") String id,@Param("contrasena") String contrasena);
 }

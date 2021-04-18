@@ -30,12 +30,42 @@ function EnviarLogIn(url){
 		}
 	})
 	.then(respuesta=>{
-		return respuesta
+		localStorage.setItem("id",respuesta.id);
+		localStorage.setItem("passwd",respuesta.contrasena);
+		localStorage.setItem("nombre",respuesta.nombre);
+		localStorage.setItem("apellido",respuesta.apellido);
+		localStorage.setItem("rol",respuesta.rol);
+		localStorage.setItem("correo",respuesta.correo);
+		
 	}) 
 	.catch(e=>{
 		alert("Error de conexion")
         console.log(e);
 	})
-    console.log(usuario);
+	
+	if(localStorage.getItem(rol)=="alumno"){
+		window.location.href = "\reservas.html";
+	}
 }
-
+function RecuperarContrasena(){
+	var usuario = document.getElementById("username").value
+	if(usuario == null){
+		alert("Introduzca su usuario en la casilla")
+		break;
+	}
+	// se realiza la llamada a la base  de datos
+	fetch("/login/recuperar?=user="+usuario,{
+		method:'GET'
+	})
+	.then(r=>{
+		if(r.status == 200){
+			confirm("Compruebe su correo, contraseña cambiada")
+		}
+	})
+	.catch(e=>{
+		alert("Ha ocurrido un error")
+		console.error(e);
+	});
+	
+	
+}

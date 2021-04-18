@@ -1,6 +1,5 @@
 package aplicacion.despaching.servicios;
 
-import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +25,16 @@ public class ServicioLogIn {
 	}
 	public boolean recuperarPasswd(String usuario){
 		boolean respuesta = false;
+		String newPasswd = generarContrasena();
 		
-		final String contenido = "Su nueva contraseña es: "+generarContrasena();
+		final String contenido = "Su nueva contraseña es: "+newPasswd;
 		final String destinatario = repositorioUsuarios.cargarEmail(usuario);
 		if(destinatario!= null){
 			respuesta = true;
 			final  String asunto = "Recuperacion Contraseña";
 			servicioEmail.enviarEmail(destinatario,direccionEmail,asunto,contenido);
+			// ase actualiza en la base de datos
+			repositorioUsuarios.updateContrasena(usuario,newPasswd);
 		}else {
 			respuesta = false;
 		}
