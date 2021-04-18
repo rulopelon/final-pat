@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import aplicacion.despaching.modelos.Usuario;
 
 public interface RepositorioUsuarios extends CrudRepository<Usuario,String>{
-	@Query("SELECT email FROM usuarios WHERE id=:usuario")
+	@Query("SELECT correo FROM usuarios WHERE id=:usuario")
 	  public String cargarEmail(@Param("usuario") String usuario);
 	
 	@Query("SELECT * FROM Usuarios WHERE id=:id")
