@@ -51,7 +51,7 @@ function RecuperarContrasena(){
 	var usuario = document.getElementById("username").value
 	if(usuario == null){
 		alert("Introduzca su usuario en la casilla")
-		break;
+		
 	}
 	// se realiza la llamada a la base  de datos
 	fetch("/login/recuperar?=user="+usuario,{
