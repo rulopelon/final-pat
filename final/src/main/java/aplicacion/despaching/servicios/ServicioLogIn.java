@@ -20,8 +20,8 @@ public class ServicioLogIn {
 	private String direccionEmail;
 	 
 	public Usuario logIn(String user, String passwd){
-		Optional<Usuario> usuario = repositorioUsuarios.findById(user);
-		return (Usuario)usuario.get();
+		Usuario usuario = repositorioUsuarios.cargarUsuarioById(user);
+		return usuario;
 		
 	}
 	public boolean recuperarPasswd(String usuario){
