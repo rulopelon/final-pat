@@ -1,16 +1,13 @@
 package aplicacion.despaching.modelos;
 
-import java.util.HashMap;
-import java.util.Map;
+
 import javax.annotation.Generated;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.relational.core.mapping.Table;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -64,8 +61,7 @@ public Usuario(String nombre, String apellido, String id) {
     this.id = id;
 }
 
-@JsonIgnore
-private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
 
 @JsonProperty("correo")
 public String getCorreo() {
@@ -117,15 +113,9 @@ public void setRol(String rol) {
 this.rol = rol;
 }
 
-@JsonAnyGetter
-public Map<String, Object> getAdditionalProperties() {
-return this.additionalProperties;
-}
 
-@JsonAnySetter
-public void setAdditionalProperty(String name, Object value) {
-this.additionalProperties.put(name, value);
-}
+
+
 
 @Override
 public String toString() {
@@ -154,8 +144,7 @@ sb.append(',');
 sb.append("additionalProperties");
 sb.append('=');
 
-sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
-sb.append(',');
+
 if (sb.charAt((sb.length()- 1)) == ',') {
 sb.setCharAt((sb.length()- 1), ']');
 } else {
@@ -168,7 +157,6 @@ return sb.toString();
 public int hashCode() {
 int result = 1;
 result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
-result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
 result = ((result* 31)+((this.nombre == null)? 0 :this.nombre.hashCode()));
 result = ((result* 31)+((this.correo == null)? 0 :this.correo.hashCode()));
 result = ((result* 31)+((this.apellido == null)? 0 :this.apellido.hashCode()));
@@ -176,16 +164,6 @@ result = ((result* 31)+((this.rol == null)? 0 :this.rol.hashCode()));
 return result;
 }
 
-@Override
-public boolean equals(Object other) {
-if (other == this) {
-return true;
-}
-if ((other instanceof Usuario) == false) {
-return false;
-}
-Usuario rhs = ((Usuario) other);
-return ((((((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id)))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.nombre == rhs.nombre)||((this.nombre!= null)&&this.nombre.equals(rhs.nombre))))&&((this.correo == rhs.correo)||((this.correo!= null)&&this.correo.equals(rhs.correo))))&&((this.apellido == rhs.apellido)||((this.apellido!= null)&&this.apellido.equals(rhs.apellido))));
-}
+
 
 }
