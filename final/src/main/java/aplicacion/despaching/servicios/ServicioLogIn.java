@@ -1,5 +1,6 @@
 package aplicacion.despaching.servicios;
 
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,8 @@ public class ServicioLogIn {
 	private String direccionEmail;
 	 
 	public Usuario logIn(String user, String passwd){
-		return repositorioUsuarios.cargarUsuarioById(user);
+		Optional<Usuario> usuario = repositorioUsuarios.findById(user);
+		return (Usuario)usuario.get();
 		
 	}
 	public boolean recuperarPasswd(String usuario){
