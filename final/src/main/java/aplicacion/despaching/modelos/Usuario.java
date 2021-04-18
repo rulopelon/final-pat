@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
 "correo",
 "id",
+"contrasena",
 "nombre",
 "apellido",
 "rol"
@@ -26,6 +27,8 @@ public class Usuario {
 
 @JsonProperty("correo")
 private String correo;
+@JsonProperty("contrasena")
+private String contrasena;
 @Id
 @JsonProperty("id")
 private String id;
@@ -48,11 +51,13 @@ public Usuario(String correo, String nombre, String apellido, String id,String r
     this.setRol(rol);
 }
 @PersistenceConstructor
-public Usuario(String correo, String nombre, String apellido, String id) {
+public Usuario(String correo, String nombre, String apellido, String id,String rol, String contrasena) {
     this(correo);
     this.setNombre(nombre);
     this.setApellido(apellido);
     this.setId(id);
+    this.setContrasena(contrasena);
+    this.setRol(rol);
 }
 
 public Usuario(String nombre, String apellido, String id) {
@@ -66,6 +71,16 @@ public Usuario(String nombre, String apellido, String id) {
 @JsonProperty("correo")
 public String getCorreo() {
 return correo;
+}
+
+
+@JsonProperty("contrasena")
+public void setContrasena(String contrasena) {
+this.contrasena = correo;
+}
+@JsonProperty("contrasena")
+public String getContrasena() {
+return contrasena;
 }
 
 

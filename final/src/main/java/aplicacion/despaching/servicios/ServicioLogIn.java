@@ -20,7 +20,7 @@ public class ServicioLogIn {
 	private String direccionEmail;
 	 
 	public Usuario logIn(String user, String passwd){
-		Usuario usuario = repositorioUsuarios.cargarUsuarioById(user);
+		Usuario usuario = repositorioUsuarios.cargarUsuarioByIdPass(user,passwd);
 		return usuario;
 		
 	}
