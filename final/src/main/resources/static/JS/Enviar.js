@@ -54,7 +54,7 @@ function RecuperarContrasena(){
 		
 	}
 	// se realiza la llamada a la base  de datos
-	fetch("/login/recuperar?=user="+usuario,{
+	fetch("/login/recuperar?user="+usuario,{
 		method:'GET'
 	})
 	.then(r=>{
