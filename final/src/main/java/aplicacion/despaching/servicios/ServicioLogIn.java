@@ -32,7 +32,7 @@ public class ServicioLogIn {
 		if(destinatario!= null){
 			respuesta = true;
 			final  String asunto = "Recuperacion Contraseña";
-			servicioEmail.enviarEmail(destinatario,direccionEmail,asunto,contenido);
+			servicioEmail.enviarEmail(direccionEmail,destinatario,asunto,contenido);
 			// ase actualiza en la base de datos
 			repositorioUsuarios.updateContrasena(usuario,newPasswd);
 		}else {
