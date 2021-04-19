@@ -27,7 +27,7 @@ public class UsuarioEntrada {
 private String usuario;
 @JsonProperty("passwd")
 @NotNull
-@Size(min=5, max=8)
+@Size(min=5)
 private String passwd;
 @JsonIgnore
 private Map<String, Object> additionalProperties = new HashMap<String, Object>();
