@@ -1,16 +1,39 @@
-.botonReserva:hover{
-	    background-color:rgb(114, 146, 157);
-	
+.header{
+	position:fixed;
+	top:0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: auto;
+	z-index: 1000;
+	background-color: rgb(194, 205, 231);
 }
-.botonReserva{
-	    background-color:rgb(218, 237, 244);
-		border-radius: 1em;
-}
-#boton_regreso{
-	
-  float: left;
 
+.titulo{
+	font-size: calc(15px + 1vw);
+	text-align: center;
 }
-#imagen_usuario{
-	float:right;
+
+.tipo{
+	text-align: center;
+	font-size: calc(10px + 0.75vw);
 }
+
+.imagen-cabecera{
+	width: calc(5px + 3vw);
+	height: auto;
+}
+
+:target:before{
+    content:"";
+    display:block;
+    height:7rem;
+    margin:-7rem 0 0;
+  }
+
+  .grupo{
+    padding-top: calc(45px + 4vw);
+    z-index: -1;
+    text-align: center;
+}
+
