@@ -12,13 +12,13 @@ public class Alumno {
 	String idAlumno;
 	
 	private String nombre;
-	private String apellidos;
+	private String apellido;
 	private String correo;
-	public Alumno(String idAlumno, String nombre, String apellidos, String correo) {
+	public Alumno(String idAlumno, String nombre, String apellido, String correo) {
 		super();
 		this.idAlumno = idAlumno;
 		this.nombre = nombre;
-		this.apellidos = apellidos;
+		this.apellido = apellido;
 		this.correo = correo;
 	}
 	public String getIdAlumno() {
@@ -34,10 +34,10 @@ public class Alumno {
 		this.nombre = nombre;
 	}
 	public String getApellidos() {
-		return apellidos;
+		return apellido;
 	}
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 	public String getCorreo() {
 		return correo;
