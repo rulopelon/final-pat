@@ -22,13 +22,28 @@ public class ControlerReservas {
 	@Autowired
 	ServicioReservas servicioReservas;
 	
-	@PostMapping("/realizar")
+	@PostMapping("/realizarReserva")
 	public void realizarReserva(@RequestBody Reserva reserva) {
 		servicioReservas.crearReserva(reserva);
 	}
 	@GetMapping("/getReservasProfesor")
-	public ResponseEntity<List<Reserva>> getProfesores(@RequestParam("id") String id) {
+	public ResponseEntity<List<Reserva>> getReservasProfesor(@RequestParam("id") String id) {
 		List<Reserva> reservas = servicioReservas.cargarReservasProfesor(id);
 		return new ResponseEntity<List<Reserva>>(reservas,HttpStatus.OK);
 	}
+	@GetMapping("/getReservasAlumno")
+	public ResponseEntity<List<Reserva>> getReservasAlumno(@RequestParam("id") String id) {
+		List<Reserva> reservas = servicioReservas.cargarReservasAlumno(id);
+		return new ResponseEntity<List<Reserva>>(reservas,HttpStatus.OK);
+	}
+	@GetMapping("/getReserva")
+	public ResponseEntity<Reserva> getReserva(@RequestParam("id") String id) {
+		Reserva reserva = servicioReservas.getReservaById(id);
+		return new ResponseEntity<Reserva>(reserva,HttpStatus.OK);
+	}
+	@GetMapping("/deleteReserva")
+	public void deleteReserva(@RequestParam("id") Reserva reserva) {
+		servicioReservas.borrar(reserva);
+	}
+	
 }

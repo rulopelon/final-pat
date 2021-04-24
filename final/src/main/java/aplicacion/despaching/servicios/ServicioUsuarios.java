@@ -63,4 +63,8 @@ public class ServicioUsuarios {
 		}
 		return respuesta;
 	}
+	public Usuario getUsuario(String id){
+		return repositorioUsuarios.cargarUsuarioById(id);
+		
+	}
 }	

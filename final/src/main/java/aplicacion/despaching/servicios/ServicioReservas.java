@@ -43,4 +43,9 @@ public class ServicioReservas {
 		ArrayList<Reserva> arrayReservas = new ArrayList<Reserva>(reservas);
 		return arrayReservas;
 	}
+	public Reserva getReservaById(String id){
+		
+		return repositorioReservas.getReservasByid(id);
+	}
+	
 }
