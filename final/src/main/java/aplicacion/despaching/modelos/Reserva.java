@@ -11,7 +11,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data
-@Table("Reservas")
+@Table("reservas")
 public class Reserva {
 	@Id
 	@Column("idReserva")
