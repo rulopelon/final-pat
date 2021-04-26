@@ -5,5 +5,5 @@ var rol = localStorage.getItem("rol");
 
 
 document.getElementById("nombre").innerHTML = nombre + " " + apellido;
-document.getElementById("rol").innerHTML = rol;
+document.getElementById("rol").innerHTML = "Rol: " + rol;
 
