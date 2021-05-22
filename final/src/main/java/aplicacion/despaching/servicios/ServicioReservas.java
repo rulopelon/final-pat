@@ -48,5 +48,9 @@ public class ServicioReservas {
 		
 		return repositorioReservas.getReservasByid(id);
 	}
+	public void addAlumnoReserva(Alumno alumno,String idReserva){
+		repositorioReservas.addAlumnoReserva(idReserva, alumno.getIdAlumno());
+		
+	}
 	
 }

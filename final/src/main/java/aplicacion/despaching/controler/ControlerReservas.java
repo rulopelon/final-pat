@@ -1,6 +1,5 @@
 package aplicacion.despaching.controler;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import aplicacion.despaching.modelos.Alumno;
 import aplicacion.despaching.modelos.Reserva;
 import aplicacion.despaching.servicios.ServicioReservas;
 
@@ -46,6 +46,11 @@ public class ControlerReservas {
 	@DeleteMapping("/deleteReserva/{id}")
 	public void deleteReserva(@PathVariable("id") String id) {
 		servicioReservas.borrar(id);
+	}
+	@GetMapping("/addAlumnoReserva/{idReserva}")
+	public ResponseEntity<String> addAlumnoReserva(@PathVariable(value="idReserva") String idReserva,@RequestBody Alumno alumno) {
+		servicioReservas.addAlumnoReserva(alumno,idReserva);
+		return new ResponseEntity<String>("Todo ok",HttpStatus.OK);
 	}
 	
 }

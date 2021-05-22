@@ -78,6 +78,9 @@ public class ServicioUsuarios {
 		repositorioAlumnos.save(alumno);
 		repositorioAlumnos.addAlumnosProfesor(alumno.getIdAlumno(), profesor.getId());;
 	}
+	public void addAlumnoProfesor(Alumno alumno, String profesor) {
+		repositorioAlumnos.addAlumnosProfesor(alumno.getIdAlumno(), profesor);;
+	}
 	public void addProfesor(Profesor profesor) {
 		repositorioProfesores.save(profesor);
 	}
