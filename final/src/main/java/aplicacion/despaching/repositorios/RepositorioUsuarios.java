@@ -30,4 +30,5 @@ public interface RepositorioUsuarios extends CrudRepository<Usuario,String>{
 	@Query("SELECT a.idAlumno FROM alumnos a, profesores p, alumnos_profesores u WHERE a.idAlumno=:u.idAlumno and u.idProfesor= p.id and p.id=:id")
 	 public List<String> getAlumnosProfesor(@Param("id") String id);
 	
+	
 }

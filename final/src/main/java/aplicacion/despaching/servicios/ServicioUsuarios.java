@@ -10,6 +10,8 @@ import aplicacion.despaching.modelos.Alumno;
 import aplicacion.despaching.modelos.Profesor;
 import aplicacion.despaching.modelos.Reserva;
 import aplicacion.despaching.modelos.Usuario;
+import aplicacion.despaching.repositorios.RepositorioAlumnos;
+import aplicacion.despaching.repositorios.RepositorioProfesores;
 import aplicacion.despaching.repositorios.RepositorioReservas;
 import aplicacion.despaching.repositorios.RepositorioUsuarios;
 
@@ -19,6 +21,11 @@ public class ServicioUsuarios {
 	RepositorioUsuarios repositorioUsuarios;
 	@Autowired
 	RepositorioReservas repositorioReservas;
+	@Autowired
+	RepositorioAlumnos repositorioAlumnos;
+	@Autowired
+	RepositorioProfesores repositorioProfesores;
+	
 	public void borrarUsuarioById(String id) {
 		Usuario usuarioBorrar = repositorioUsuarios.cargarUsuarioById(id);
 		repositorioUsuarios.delete(usuarioBorrar);
@@ -67,4 +74,12 @@ public class ServicioUsuarios {
 		return repositorioUsuarios.cargarUsuarioById(id);
 		
 	}
+	public void addAlumno(Alumno alumno, Profesor profesor) {
+		repositorioAlumnos.save(alumno);
+		repositorioAlumnos.addAlumnosProfesor(alumno.getIdAlumno(), profesor.getId());;
+	}
+	public void addProfesor(Profesor profesor) {
+		repositorioProfesores.save(profesor);
+	}
+	
 }	

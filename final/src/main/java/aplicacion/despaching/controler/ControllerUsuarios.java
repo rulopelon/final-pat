@@ -28,9 +28,21 @@ public class ControllerUsuarios {
 		return new ResponseEntity<String>("Todo correcto",HttpStatus.OK);
 
 	}
-	@PostMapping("Usuario")
+	@PostMapping("/addUsuario")
 	public ResponseEntity<String> addUsuario(@RequestBody Usuario user) {
 		servicioUsuarios.addUsuario(user);
+		return new ResponseEntity<String>("Todo correcto",HttpStatus.OK);
+
+	}
+	@PostMapping("/addProfesor")
+	public ResponseEntity<String> addProfesor(@RequestBody Profesor profesor) {
+		servicioUsuarios.addProfesor(profesor);
+		return new ResponseEntity<String>("Todo correcto",HttpStatus.OK);
+
+	}
+	@PostMapping("/addAlumno")
+	public ResponseEntity<String> addAlumno(@RequestBody Alumno alumno,@RequestBody Profesor profesor) {
+		servicioUsuarios.addAlumno(alumno,profesor);
 		return new ResponseEntity<String>("Todo correcto",HttpStatus.OK);
 
 	}

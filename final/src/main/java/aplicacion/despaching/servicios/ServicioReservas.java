@@ -19,7 +19,8 @@ public class ServicioReservas {
 		repositorioReservas.save(reserva);
 		
 	}
-	public void borrar(Reserva reserva){
+	public void borrar(String id){
+		Reserva reserva =(Reserva)repositorioReservas.findById(id).get();
 		repositorioReservas.delete(reserva);
 		
 	}

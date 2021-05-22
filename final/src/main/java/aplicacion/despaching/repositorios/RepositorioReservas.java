@@ -11,7 +11,7 @@ import aplicacion.despaching.modelos.Profesor;
 import aplicacion.despaching.modelos.Reserva;
 import aplicacion.despaching.modelos.Usuario;
 
-public interface RepositorioReservas extends CrudRepository<Reserva,Usuario>{
+public interface RepositorioReservas extends CrudRepository<Reserva,String>{
 	@Query("SELECT * FROM reservas WHERE idProfesor= :id")
 	List<Reserva> getReservasProfesorById(@Param("id") String id);
 	
