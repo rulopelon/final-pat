@@ -32,4 +32,4 @@ public class Profesor extends Usuario{
 		alumnos.add(alumno);
 	}
 	
-	}
+}
