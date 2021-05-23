@@ -27,7 +27,6 @@ public class ControllerUsuarios {
 	public ResponseEntity<String> borrarUsuario(@RequestBody Usuario user) {
 		servicioUsuarios.borrarUsuario(user);
 		return new ResponseEntity<String>("Todo correcto",HttpStatus.OK);
-
 	}
 	@PostMapping("/addUsuario")
 	public ResponseEntity<String> addUsuario(@RequestBody Usuario user) {

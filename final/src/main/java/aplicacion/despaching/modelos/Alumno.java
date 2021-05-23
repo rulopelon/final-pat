@@ -4,51 +4,91 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+
+
+import java.util.HashMap;
+import java.util.Map;
+import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+"idAlumno",
+"nombre",
+"apellido",
+"correo"
+})
+@Generated("jsonschema2pojo")
 @Table("Alumnos")
-
 public class Alumno {
-	@Id
-	@Column("idAlumno")
-	String idAlumno;
-	
-	private String nombre;
-	private String apellido;
-	private String correo;
-	public Alumno(String idAlumno, String nombre, String apellido, String correo) {
-		super();
-		this.idAlumno = idAlumno;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.correo = correo;
-	}
-	public String getIdAlumno() {
-		return idAlumno;
-	}
-	public void setIdAlumno(String idAlumno) {
-		this.idAlumno = idAlumno;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellidos() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public String getCorreo() {
-		return correo;
-	}
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-	
-	
-	
 	
 
+@JsonProperty("idAlumno")
+@Id
+@Column("idAlumno")
+private String idAlumno;
+@JsonProperty("nombre")
+private String nombre;
+@JsonProperty("apellido")
+private String apellido;
+@JsonProperty("correo")
+private String correo;
+@JsonIgnore
+private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+@JsonProperty("idAlumno")
+public String getIdAlumno() {
+return idAlumno;
+}
+
+@JsonProperty("idAlumno")
+public void setIdAlumno(String idAlumno) {
+this.idAlumno = idAlumno;
+}
+
+@JsonProperty("nombre")
+public String getNombre() {
+return nombre;
+}
+
+@JsonProperty("nombre")
+public void setNombre(String nombre) {
+this.nombre = nombre;
+}
+
+@JsonProperty("apellido")
+public String getApellido() {
+return apellido;
+}
+
+@JsonProperty("apellido")
+public void setApellido(String apellido) {
+this.apellido = apellido;
+}
+
+@JsonProperty("correo")
+public String getCorreo() {
+return correo;
+}
+
+@JsonProperty("correo")
+public void setCorreo(String correo) {
+this.correo = correo;
+}
+
+@JsonAnyGetter
+public Map<String, Object> getAdditionalProperties() {
+return this.additionalProperties;
+}
+
+@JsonAnySetter
+public void setAdditionalProperty(String name, Object value) {
+this.additionalProperties.put(name, value);
+}
 
 }
