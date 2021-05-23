@@ -46,9 +46,9 @@ public class ControllerUsuarios {
 		return new ResponseEntity<String>("Todo correcto",HttpStatus.OK);
 
 	}
-	@PostMapping("/addAlumno")
-	public ResponseEntity<String> addAlumno(@RequestBody Alumno alumno,@RequestBody Profesor profesor) {
-		servicioUsuarios.addAlumno(alumno,profesor);
+	@PostMapping("/addAlumno/{idProfesor}")
+	public ResponseEntity<String> addAlumno(@RequestBody Alumno alumno,@PathVariable(value = "idProfesor") String idProfesor) {
+		servicioUsuarios.addAlumno(alumno,idProfesor);
 		return new ResponseEntity<String>("Todo correcto",HttpStatus.OK);
 
 	}
