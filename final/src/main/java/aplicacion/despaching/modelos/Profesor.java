@@ -7,7 +7,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data	
-@Table("Profesores")
+@Table("profesores")
 public class Profesor{
 	private String id;
 	private String nombre;
