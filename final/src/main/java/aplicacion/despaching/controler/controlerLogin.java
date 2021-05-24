@@ -35,9 +35,9 @@ public class controlerLogin {
 		return respuesta;
 	}
 	@GetMapping("/recuperar")
-	public ResponseEntity<String> recuperarPasswd(@RequestParam("user") String usuario){
+	public ResponseEntity<String> recuperarPasswd(@RequestParam("userId") String idUsuario){
 		ResponseEntity<String> respuesta;
-		if(servicioLogin.recuperarPasswd(usuario)){
+		if(servicioLogin.recuperarPasswd(idUsuario)){
 			respuesta = new ResponseEntity<String>("Todo ok",HttpStatus.OK);
 			
 		}else {

@@ -11,6 +11,6 @@ import aplicacion.despaching.modelos.Profesor;
 
 
 	public interface RepositorioProfesores extends CrudRepository<Profesor,String>{
-	@Query("INSERT INTO profesores (id,nombre, apellido,correo,rol) VALUE(:id,:nombre,:apellido,:correo,:rol)")
+	@Query("INSERT INTO profesores (id,nombre, apellido,correo,rol) VALUES(:id,:nombre,:apellido,:correo,:rol)")
 	public void addProfesor(@Param("id")String id,@Param("nombre")String nombre,@Param("apellido")String apellido,@Param("correo")String correo,@Param("rol")String rol);
 }

@@ -4,7 +4,6 @@ package aplicacion.despaching.modelos;
 import javax.annotation.Generated;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.relational.core.mapping.Table;
 
 
@@ -12,82 +11,42 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-"correo",
 "id",
-"contrasena",
 "nombre",
 "apellido",
+"correo",
+"contrasena",
 "rol"
 })
-@Table("Usuarios")
 @Generated("jsonschema2pojo")
+@Table("usuarios")
 public class Usuario {
 
-@JsonProperty("correo")
-private String correo;
-@JsonProperty("contrasena")
-private String contrasena;
-@Id
 @JsonProperty("id")
+@Id
 private String id;
 @JsonProperty("nombre")
 private String nombre;
 @JsonProperty("apellido")
 private String apellido;
+@JsonProperty("correo")
+private String correo;
+@JsonProperty("contrasena")
+private String contrasena;
 @JsonProperty("rol")
 private String rol;
-
-public Usuario(String correo) {
-    this.setCorreo(correo);
-}
-
-public Usuario(String correo, String nombre, String apellido, String id,String rol) {
-    this(correo);
-    this.setNombre(nombre);
-    this.setApellido(apellido);
-    this.setId(id);
-    this.setRol(rol);
-}
-@PersistenceConstructor
-public Usuario(String correo, String nombre, String apellido, String id,String rol, String contrasena) {
-    this(correo);
-    this.setNombre(nombre);
-    this.setApellido(apellido);
-    this.setId(id);
-    this.setContrasena(contrasena);
-    this.setRol(rol);
-}
-
-public Usuario(String nombre, String apellido, String id) {
-    this.nombre = nombre;
-    this.apellido = apellido;
-    this.id = id;
-}
-
-
-
-@JsonProperty("correo")
-public String getCorreo() {
-return correo;
-}
-
-
-@JsonProperty("contrasena")
-public void setContrasena(String contrasena) {
-this.contrasena = correo;
-}
-@JsonProperty("contrasena")
-public String getContrasena() {
-return contrasena;
-}
-
-
-@JsonProperty("correo")
-public void setCorreo(String correo) {
-this.correo = correo;
-}
+@JsonIgnore
+private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 @JsonProperty("id")
 public String getId() {
@@ -118,6 +77,27 @@ return apellido;
 public void setApellido(String apellido) {
 this.apellido = apellido;
 }
+
+@JsonProperty("correo")
+public String getCorreo() {
+return correo;
+}
+
+@JsonProperty("correo")
+public void setCorreo(String correo) {
+this.correo = correo;
+}
+
+@JsonProperty("contrasena")
+public String getContrasena() {
+return contrasena;
+}
+
+@JsonProperty("contrasena")
+public void setContrasena(String contrasena) {
+this.contrasena = contrasena;
+}
+
 @JsonProperty("rol")
 public String getRol() {
 return rol;
@@ -128,57 +108,14 @@ public void setRol(String rol) {
 this.rol = rol;
 }
 
-
-
-
-
-@Override
-public String toString() {
-StringBuilder sb = new StringBuilder();
-sb.append(Usuario.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-sb.append("correo");
-sb.append('=');
-sb.append(((this.correo == null)?"<null>":this.correo));
-sb.append(',');
-sb.append("id");
-sb.append('=');
-sb.append(((this.id == null)?"<null>":this.id));
-sb.append(',');
-sb.append("nombre");
-sb.append('=');
-sb.append(((this.nombre == null)?"<null>":this.nombre));
-sb.append(',');
-sb.append("apellido");
-sb.append('=');
-sb.append(((this.apellido == null)?"<null>":this.apellido));
-sb.append(',');
-sb.append("rol");
-sb.append('=');
-sb.append(((this.rol == null)?"<null>":this.rol));
-sb.append(',');
-sb.append("additionalProperties");
-sb.append('=');
-
-
-if (sb.charAt((sb.length()- 1)) == ',') {
-sb.setCharAt((sb.length()- 1), ']');
-} else {
-sb.append(']');
-}
-return sb.toString();
+@JsonAnyGetter
+public Map<String, Object> getAdditionalProperties() {
+return this.additionalProperties;
 }
 
-@Override
-public int hashCode() {
-int result = 1;
-result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
-result = ((result* 31)+((this.nombre == null)? 0 :this.nombre.hashCode()));
-result = ((result* 31)+((this.correo == null)? 0 :this.correo.hashCode()));
-result = ((result* 31)+((this.apellido == null)? 0 :this.apellido.hashCode()));
-result = ((result* 31)+((this.rol == null)? 0 :this.rol.hashCode()));
-return result;
+@JsonAnySetter
+public void setAdditionalProperty(String name, Object value) {
+this.additionalProperties.put(name, value);
 }
-
-
 
 }
