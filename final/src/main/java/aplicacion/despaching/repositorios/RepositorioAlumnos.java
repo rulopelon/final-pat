@@ -18,6 +18,6 @@ import aplicacion.despaching.modelos.Alumno;
 		public void addAlumnosProfesor(@Param("idAlumno") String idAlumno,@Param("idProfesor") String idProfesor);
 		@Transactional
 		@Modifying
-		@Query("INSERT INTO alumnos (id,nombre, apellido,correo) VALUES(:id,:nombre,:apellido,:correo)")
+		@Query("INSERT INTO alumnos (idAlumno,nombre, apellido,correo) VALUES(:id,:nombre,:apellido,:correo)")
 		public void addAlumno(@Param("id")String id,@Param("nombre")String nombre,@Param("apellido")String apellido,@Param("correo")String correo);
 }
