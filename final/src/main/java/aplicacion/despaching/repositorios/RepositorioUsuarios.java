@@ -26,14 +26,14 @@ public interface RepositorioUsuarios extends CrudRepository<Usuario,String>{
 	 public void updateContrasena(@Param("id") String id,@Param("contrasena") String contrasena);
 	@Query("SELECT * FROM profesores WHERE id=:id")
 	 public Profesor getProfesorById(@Param("id") String id);
-	@Query("SELECT * FROM alumnos WHERE idAlumno=:id")
+	@Query("SELECT * FROM alumnos WHERE idalumno=:id")
 	 public Alumno getAlumnoById(@Param("id") String id);
 	@Query("SELECT p.id FROM alumnos a, profesores p, alumnos_profesores u WHERE a.idAlumno=u.idAlumno and u.idProfesor= p.id and a.idAlumno=:id")
 	 public List<String> getProfesoresAlumno(@Param("id") String id);
 	@Query("SELECT a.idAlumno FROM alumnos a, profesores p, alumnos_profesores u WHERE a.idAlumno=u.idAlumno and u.idProfesor= p.id and p.id=:id")
 	 public List<String> getAlumnosProfesor(@Param("id") String id);
-	@Transactional
 	@Modifying
+	@Transactional
 	@Query("INSERT INTO usuarios (id,nombre, apellido,correo,rol,contrasena) VALUES(:id,:nombre,:apellido,:correo,:rol,:contrasena)")
 	public void addUsuario(@Param("id")String id,@Param("nombre")String nombre,@Param("apellido")String apellido,@Param("correo")String correo,@Param("rol")String rol,@Param("contrasena") String contrasena);
 	
