@@ -30,8 +30,8 @@ public class Alumno {
 
 @JsonProperty("idAlumno")
 @Id
-@Column("idAlumno")
-private String idAlumno;
+@Column("idalumno")
+private String idalumno;
 @JsonProperty("nombre")
 private String nombre;
 @JsonProperty("apellido")
@@ -43,12 +43,12 @@ private Map<String, Object> additionalProperties = new HashMap<String, Object>()
 
 @JsonProperty("idAlumno")
 public String getIdAlumno() {
-return idAlumno;
+return idalumno;
 }
 
 @JsonProperty("idAlumno")
 public void setIdAlumno(String idAlumno) {
-this.idAlumno = idAlumno;
+this.idalumno = idAlumno;
 }
 
 @JsonProperty("nombre")
