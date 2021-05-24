@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 "correo"
 })
 @Generated("jsonschema2pojo")
-@Table("Alumnos")
+@Table("alumnos")
 public class Alumno {
 	
 

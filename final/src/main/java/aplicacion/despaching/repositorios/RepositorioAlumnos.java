@@ -14,4 +14,6 @@ import aplicacion.despaching.modelos.Alumno;
 		@Transactional
 		@Query("INSERT INTO alumnos_profesores (idAlumno,idProfesor) VALUES (:idAlumno,:idProfesor)")
 		public void addAlumnosProfesor(@Param("idAlumno") String idAlumno,@Param("idProfesor") String idProfesor);
+		@Query("INSERT INTO alumno (id,nombre, apellido,correo) VALUES(:id,:nombre,:apellido,:correo)")
+		public void addAlumno(@Param("id")String id,@Param("nombre")String nombre,@Param("apellido")String apellido,@Param("correo")String correo);
 }

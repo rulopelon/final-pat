@@ -34,7 +34,7 @@ public class ServicioUsuarios {
 		repositorioUsuarios.delete(user);
 	}
 	public void addUsuario(Usuario usuario) {
-		repositorioUsuarios.save(usuario);
+		repositorioUsuarios.addUsuario(usuario.getId(),usuario.getNombre(),usuario.getApellido(), usuario.getCorreo(), usuario.getRol(),usuario.getContrasena());
 	}
 	public ArrayList<Profesor> getProfesoresAlumno(String id){
 		ArrayList<Profesor> respuesta = new ArrayList<Profesor>();
