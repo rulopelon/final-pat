@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import aplicacion.despaching.modelos.Alumno;
 import aplicacion.despaching.modelos.Profesor;
@@ -36,6 +37,7 @@ public interface RepositorioReservas extends CrudRepository<Reserva,String>{
 	@Query("INSERT INTO reservas_profesores (idReserva,idProfesor) VALUES (:idReserva,:idProfesor)")
 	public void addProfesorReserva(@Param("idReserva") String idReserva,@Param("idProfesor")String idProfesor);
 	*/
+	@Transactional
 	@Query("INSERT INTO alumnos_reservas (idReserva,idProfesor) VALUES (:idReserva,:idAlumno)")
 	public void addAlumnoReserva(@Param("idReserva") String idReserva,@Param("idAlumno")String idAlumno);
 	
