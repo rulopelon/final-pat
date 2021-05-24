@@ -6,6 +6,7 @@ import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import aplicacion.despaching.modelos.Alumno;
 import aplicacion.despaching.modelos.Profesor;
@@ -31,6 +32,8 @@ public interface RepositorioUsuarios extends CrudRepository<Usuario,String>{
 	 public List<String> getProfesoresAlumno(@Param("id") String id);
 	@Query("SELECT a.idAlumno FROM alumnos a, profesores p, alumnos_profesores u WHERE a.idAlumno=u.idAlumno and u.idProfesor= p.id and p.id=:id")
 	 public List<String> getAlumnosProfesor(@Param("id") String id);
+	@Transactional
+	@Modifying
 	@Query("INSERT INTO usuarios (id,nombre, apellido,correo,rol,contrasena) VALUES(:id,:nombre,:apellido,:correo,:rol,:contrasena)")
 	public void addUsuario(@Param("id")String id,@Param("nombre")String nombre,@Param("apellido")String apellido,@Param("correo")String correo,@Param("rol")String rol,@Param("contrasena") String contrasena);
 	

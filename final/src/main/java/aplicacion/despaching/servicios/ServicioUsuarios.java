@@ -75,7 +75,7 @@ public class ServicioUsuarios {
 		
 	}
 	public void addAlumno(Alumno alumno, String profesor) {
-		repositorioAlumnos.save(alumno);
+		repositorioAlumnos.addAlumno(alumno.getIdAlumno(),alumno.getNombre(),alumno.getApellido(),alumno.getCorreo());
 		repositorioAlumnos.addAlumnosProfesor(alumno.getIdAlumno(), profesor);
 	}
 	public void addAlumnoProfesor(Alumno alumno, String profesor) {
