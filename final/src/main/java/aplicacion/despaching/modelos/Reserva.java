@@ -12,7 +12,7 @@ import lombok.Data;
 @Table("reservas")
 public class Reserva {
 	@Id
-	@Column("idReserva")
+	@Column("idreserva")
 	private String idReserva;
 	private  int dia;
 	private  int mes;
