@@ -2,6 +2,7 @@ package aplicacion.despaching.repositorios;
 
 import java.util.List;
 
+import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -37,11 +38,13 @@ public interface RepositorioReservas extends CrudRepository<Reserva,String>{
 	@Query("INSERT INTO reservas_profesores (idreserva,idprofesor) VALUES (:idReserva,:idProfesor)")
 	public void addProfesorReserva(@Param("idReserva") String idReserva,@Param("idProfesor")String idProfesor);
 	
+	@Modifying
 	@Transactional
 	@Query("INSERT INTO alumnos_reservas (idreserva,idprofesor) VALUES (:idReserva,:idAlumno)")
 	public void addAlumnoReserva(@Param("idReserva") String idReserva,@Param("idAlumno")String idAlumno);
 	
 	@Transactional
+	@Modifying
 	@Query("INSERT INTO reservas (idreserva,mes,ano,dia,minuto,hora) VALUES (:idreserva,:mes,:ano,:dia,:minuto,:hora)")
 	public void addReserva(@Param("idreserva") String idReserva,@Param("mes")int i,@Param("ano")int j,@Param("dia")int k,@Param("minuto")int l,@Param("hora")int m);
 }
