@@ -35,12 +35,13 @@ public interface RepositorioReservas extends CrudRepository<Reserva,String>{
 	@Query("SELECT * FROM reservas WHERE idreserva = :id")
 	Reserva getReservasByid(@Param("id") String reserva);
 	@Transactional
+	@Modifying
 	@Query("INSERT INTO reservas_profesores (idreserva,idprofesor) VALUES (:idReserva,:idProfesor)")
 	public void addProfesorReserva(@Param("idReserva") String idReserva,@Param("idProfesor")String idProfesor);
 	
 	@Modifying
 	@Transactional
-	@Query("INSERT INTO alumnos_reservas (idreserva,idprofesor) VALUES (:idReserva,:idAlumno)")
+	@Query("INSERT INTO alumnos_reservas (idreserva,idalumno) VALUES (:idReserva,:idAlumno)")
 	public void addAlumnoReserva(@Param("idReserva") String idReserva,@Param("idAlumno")String idAlumno);
 	
 	@Transactional
