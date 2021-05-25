@@ -16,6 +16,7 @@ public class ServicioReservas {
 	@Autowired
 	RepositorioReservas repositorioReservas;
 	public void crearReserva(Reserva reserva, String idAlumno,String idProfesor){
+		System.out.println(reserva);
 		repositorioReservas.addReserva(reserva.getIdReserva(),reserva.getMes(),reserva.getAno(),reserva.getDia(),reserva.getMinuto(),reserva.getHora());
 		repositorioReservas.addAlumnoReserva(reserva.getIdReserva(),  idAlumno);
 		repositorioReservas.addProfesorReserva(reserva.getIdReserva(),  idProfesor);
