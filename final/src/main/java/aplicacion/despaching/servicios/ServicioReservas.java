@@ -16,10 +16,10 @@ public class ServicioReservas {
 	@Autowired
 	RepositorioReservas repositorioReservas;
 	public void crearReserva(Reserva reserva, String idAlumno,String idProfesor){
-		System.out.println(reserva.getIdReserva());
-		repositorioReservas.addReserva(reserva.getIdReserva(),reserva.getMes(),reserva.getAno(),reserva.getDia(),reserva.getMinuto(),reserva.getHora());
-		repositorioReservas.addAlumnoReserva(reserva.getIdReserva(),  idAlumno);
-		repositorioReservas.addProfesorReserva(reserva.getIdReserva(),  idProfesor);
+		System.out.println(reserva.getIdreserva());
+		repositorioReservas.addReserva(reserva.getIdreserva(),reserva.getMes(),reserva.getAno(),reserva.getDia(),reserva.getMinuto(),reserva.getHora());
+		repositorioReservas.addAlumnoReserva(reserva.getIdreserva(),  idAlumno);
+		repositorioReservas.addProfesorReserva(reserva.getIdreserva(),  idProfesor);
 		
 	}
 	public void borrar(String id){

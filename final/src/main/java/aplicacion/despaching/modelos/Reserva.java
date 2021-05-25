@@ -13,7 +13,7 @@ import lombok.Data;
 public class Reserva {
 	@Id
 	@Column("idreserva")
-	private String idReserva;
+	private String idreserva;
 	private  int dia;
 	private  int mes;
 	private  int ano;
