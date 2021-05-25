@@ -15,35 +15,36 @@ import aplicacion.despaching.repositorios.RepositorioReservas;
 public class ServicioReservas {
 	@Autowired
 	RepositorioReservas repositorioReservas;
-	public void crearReserva(Reserva reserva){
-		repositorioReservas.save(reserva);
+	public void crearReserva(Reserva reserva, String idAlumno,String idProfesor){
+		repositorioReservas.addReserva(reserva.getIdReserva(),reserva.getMes(),reserva.getAno(),reserva.getDia(),reserva.getMinuto(),reserva.getHora());
+		repositorioReservas.addAlumnoReserva(reserva.getIdReserva(),  idAlumno);
+		repositorioReservas.addProfesorReserva(reserva.getIdReserva(),  idProfesor);
 		
 	}
 	public void borrar(String id){
-		Reserva reserva =(Reserva)repositorioReservas.findById(id).get();
+		Reserva reserva =repositorioReservas.getReservasByid(id);
 		repositorioReservas.delete(reserva);
 		
 	}
 	public ArrayList<Reserva> cargarReservasProfesor(String idProfesor){
-		List<Reserva> reservas = repositorioReservas.getReservasProfesorById(idProfesor);
-		ArrayList<Reserva> arrayReservas = new ArrayList<Reserva>(reservas);
-		return arrayReservas;
+		ArrayList<Reserva> respuesta = new ArrayList<Reserva>();
+		List<String> reservas = repositorioReservas.getReservasProfesorById(idProfesor);
+		for(String reserva:reservas) {
+			Reserva reservaCargada = repositorioReservas.getReservasByid(reserva);
+			respuesta.add(reservaCargada);
+		}
+		return respuesta;
 	}
 	public ArrayList<Reserva> cargarReservasAlumno(String idAlumno){
-		List<Reserva> reservas = repositorioReservas.getReservasAlumnoById(idAlumno);
-		ArrayList<Reserva> arrayReservas = new ArrayList<Reserva>(reservas);
-		return arrayReservas;
+		ArrayList<Reserva> respuesta = new ArrayList<Reserva>();
+		List<String> reservas = repositorioReservas.getReservasAlumnoById(idAlumno);
+		for(String reserva:reservas) {
+			Reserva reservaCargada = repositorioReservas.getReservasByid(reserva);
+			respuesta.add(reservaCargada);
+		}
+		return respuesta;
 	}
-	public ArrayList<Reserva> cargarReservasProfesor(Profesor profesor){
-		List<Reserva> reservas = repositorioReservas.getReservasProfesorById(profesor.getId());
-		ArrayList<Reserva> arrayReservas = new ArrayList<Reserva>(reservas);
-		return arrayReservas;
-	}
-	public ArrayList<Reserva> cargarReservasAlumno(Alumno alumno){
-		List<Reserva> reservas = repositorioReservas.getReservasAlumnoById(alumno.getIdAlumno());
-		ArrayList<Reserva> arrayReservas = new ArrayList<Reserva>(reservas);
-		return arrayReservas;
-	}
+	
 	public Reserva getReservaById(String id){
 		
 		return repositorioReservas.getReservasByid(id);

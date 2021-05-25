@@ -24,9 +24,9 @@ public class ControlerReservas {
 	@Autowired
 	ServicioReservas servicioReservas;
 	
-	@PostMapping("/realizarReserva")
-	public void realizarReserva(@RequestBody Reserva reserva) {
-		servicioReservas.crearReserva(reserva);
+	@PostMapping("/realizarReserva/{idAlumno}/{idProfesor}")
+	public void realizarReserva(@RequestBody Reserva reserva,@PathVariable(value = "idAlumno") String idAlumno,@PathVariable(value="idProfesor")String idProfesor) {
+		servicioReservas.crearReserva(reserva,idAlumno,idProfesor);
 	}
 	@GetMapping("/getReservasProfesor")
 	public ResponseEntity<List<Reserva>> getReservasProfesor(@RequestParam("id") String id) {

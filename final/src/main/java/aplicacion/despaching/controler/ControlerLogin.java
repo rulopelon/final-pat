@@ -18,7 +18,7 @@ import aplicacion.despaching.servicios.ServicioLogIn;
 
 @RestController
 @RequestMapping("/login")
-public class controlerLogin {
+public class ControlerLogin {
 	@Autowired
 	ServicioLogIn servicioLogin;
 	@PostMapping("/log")
