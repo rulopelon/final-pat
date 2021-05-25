@@ -25,8 +25,10 @@ public class ControlerReservas {
 	ServicioReservas servicioReservas;
 	
 	@PostMapping("/realizarReserva/{idAlumno}/{idProfesor}")
-	public void realizarReserva(@RequestBody Reserva reserva,@PathVariable(value = "idAlumno") String idAlumno,@PathVariable(value="idProfesor")String idProfesor) {
+	public ResponseEntity<String>  realizarReserva(@RequestBody Reserva reserva,@PathVariable(value = "idAlumno") String idAlumno,@PathVariable(value="idProfesor")String idProfesor) {
 		servicioReservas.crearReserva(reserva,idAlumno,idProfesor);
+		return new ResponseEntity<String>("Todo ok",HttpStatus.OK);
+
 	}
 	@GetMapping("/getReservasProfesor")
 	public ResponseEntity<List<Reserva>> getReservasProfesor(@RequestParam("id") String id) {
