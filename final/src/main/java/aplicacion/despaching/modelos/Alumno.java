@@ -38,8 +38,7 @@ private String nombre;
 private String apellido;
 @JsonProperty("correo")
 private String correo;
-@JsonIgnore
-private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
 
 @JsonProperty("idAlumno")
 public String getIdAlumno() {
@@ -81,14 +80,6 @@ public void setCorreo(String correo) {
 this.correo = correo;
 }
 
-@JsonAnyGetter
-public Map<String, Object> getAdditionalProperties() {
-return this.additionalProperties;
-}
 
-@JsonAnySetter
-public void setAdditionalProperty(String name, Object value) {
-this.additionalProperties.put(name, value);
-}
 
 }
