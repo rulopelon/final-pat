@@ -1,6 +1,5 @@
 var x = document.getElementById("escoger");
 
-
     const url = "/usuarios/getProfesores?id=" + localStorage.getItem("id")
 	// se realiza la llamada al servidor
 	fetch(url,{
@@ -24,7 +23,9 @@ var x = document.getElementById("escoger");
         // falta tratamiento de datos recibido
 		let i = 0
 		while(respuesta[i] != undefined){
-			x.add(respuesta[i].nombre)
+			let option = document.createElement("option")
+			option.text= respuesta[i].nombre
+			x.add(option)
 			i++
 		} 
         
