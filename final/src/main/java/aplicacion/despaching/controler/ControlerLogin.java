@@ -22,8 +22,8 @@ public class ControlerLogin {
 	@Autowired
 	ServicioLogIn servicioLogin;
 	@PostMapping("/log")
-	public ResponseEntity logIn(@RequestBody @Valid UsuarioEntrada usuario){
-		ResponseEntity respuesta;
+	public ResponseEntity<?> logIn(@RequestBody @Valid UsuarioEntrada usuario){
+		ResponseEntity<?> respuesta;
 		Usuario usuarioRespuesta = servicioLogin.logIn(usuario.getUsuario(), usuario.getPasswd());
 		if(usuarioRespuesta != null){
 			respuesta = new ResponseEntity<Usuario>(usuarioRespuesta,HttpStatus.OK);

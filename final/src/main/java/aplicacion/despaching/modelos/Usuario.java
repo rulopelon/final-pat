@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import lombok.Data;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,6 +30,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 "contrasena",
 "rol"
 })
+@Data
 @Generated("jsonschema2pojo")
 @Table("usuarios")
 public class Usuario {
@@ -35,16 +38,16 @@ public class Usuario {
 @JsonProperty("id")
 @Id
 private String id;
+@JsonProperty("correo")
+private String correo;
 @JsonProperty("nombre")
 private String nombre;
 @JsonProperty("apellido")
 private String apellido;
-@JsonProperty("correo")
-private String correo;
-@JsonProperty("contrasena")
-private String contrasena;
 @JsonProperty("rol")
 private String rol;
+@JsonProperty("contrasena")
+private String contrasena;
 
 
 @JsonProperty("id")
