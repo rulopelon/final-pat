@@ -84,8 +84,10 @@ function actualizar(){
 
             console.log(dia)
             console.log(hoy.getDate())
- 
-            if (dia == hoy.getDate() && mes == hoy.getMonth() && ano == hoy.getFullYear()){
+            
+
+
+            if (dia == hoy.getDate() && mes == (hoy.getMonth()+1) && ano == hoy.getFullYear()){
                 console.log("hola")
                 console.log(horat)
                 console.log(minutot)
