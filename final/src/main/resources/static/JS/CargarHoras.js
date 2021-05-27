@@ -81,7 +81,7 @@ function actualizar(){
             dia = respuesta[i].dia
             mes = respuesta[i].mes
             ano = respuesta[i].ano
-            if(hora>8 && hora< 20){
+            if(respuesta[i].hora>8 && respuesta[i].hora< 20){
                 if (dia == hoy.getDate() && mes == (hoy.getMonth()+1) && ano == hoy.getFullYear()){
                     document.getElementById(horat +":"+ minutot).style.backgroundColor = "rgb(237, 120, 153)"
                 }
