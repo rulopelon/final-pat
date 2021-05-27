@@ -86,6 +86,9 @@ function actualizar(){
             console.log(hoy.getDate())
  
             if (dia == hoy.getDate() && mes == hoy.getMonth() && ano == hoy.getFullYear()){
+                console.log("hola")
+                console.log(horat)
+                console.log(minutot)
                 document.getElementById(horat +":"+ minutot).style.backgroundColor = "rgb(237, 120, 153)"
             }
             i++
