@@ -22,7 +22,7 @@ public interface RepositorioUsuarios extends CrudRepository<Usuario,String>{
 	@Query("SELECT * FROM usuarios WHERE nombre=:nombre and contrasena=:contrasena")
 	 public Usuario cargarUsuarioByIdPass(@Param("nombre") String nombre,@Param("contrasena") String contrasena);
 	@Modifying
-	@Query("UPDATE Usuarios SET contrasena = :contrasena WHERE id=:id ")
+	@Query("UPDATE usuarios SET contrasena = :contrasena WHERE id=:id ")
 	 public void updateContrasena(@Param("id") String id,@Param("contrasena") String contrasena);
 	@Query("SELECT * FROM profesores WHERE id=:id")
 	 public Profesor getProfesorById(@Param("id") String id);
