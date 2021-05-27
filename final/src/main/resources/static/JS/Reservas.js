@@ -2,7 +2,7 @@
 var usuario = localStorage.getItem("usuario");
 
 function reservar(){
-	const url = "/reservas/realizarReserva/" + localStorage.getItem("id") + "/" + document.getElementById("escoger").value;
+	var url = "/reservas/realizarReserva/" + localStorage.getItem("id") + "/" + document.getElementById("escoger").value;
 	let fecha = document.getElementById("Fecha").value
 	let hora = document.getElementById("Hora").value
 	fecha = fecha.split("-")
