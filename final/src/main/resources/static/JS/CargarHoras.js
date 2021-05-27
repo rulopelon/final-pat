@@ -53,9 +53,9 @@ function actualizar(){
         while(respuesta[i] != undefined){
             let horat
             let minutot
-            let diat
-            let mest
-            let anot
+            let dia
+            let mes
+            let ano
             
 
             if(respuesta[i].hora < 10){
