@@ -26,7 +26,7 @@ function actualizar(){
         minuto= 0;
         hora = hora +1
     }
-    const url
+    const url = ""
     if(localStorage.getItem("rol") == "alumno"){
         url = "/reservas/getReservasAlumno?id=" + localStorage.getItem("id")
     }else{
