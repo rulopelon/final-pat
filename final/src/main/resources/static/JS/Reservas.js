@@ -9,7 +9,7 @@ function reservar(){
 	hora = hora.split(":")
 	
 	let mensaje ={
-		id: Math.floor(Math.random() * 100001),
+		idreserva: Math.floor(Math.random() * 100001),
 		dia: fecha[2],
 		mes: fecha[1],
 		ano: fecha[0],
