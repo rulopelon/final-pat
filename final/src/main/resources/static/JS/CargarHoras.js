@@ -1,10 +1,12 @@
-var hora = 9
-var minuto = 0
+
 
 actualizar();
 
 
 function actualizar(){
+
+    var hora = 9
+    var minuto = 0
 
     for(i = 0; i<11; i ++){
         for (j = 0; j<6; j++){
@@ -34,7 +36,6 @@ function actualizar(){
 	})
 	.then(r=>{
 		if(r.status ==200){
-			return r.json()
 
 		}else if(r.status==400){
             alert("Error")
