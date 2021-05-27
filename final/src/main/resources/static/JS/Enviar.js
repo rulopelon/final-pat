@@ -37,18 +37,19 @@ function EnviarLogIn(url){
 		localStorage.setItem("rol",respuesta.rol);
 		localStorage.setItem("correo",respuesta.correo);
 		
+		if(localStorage.getItem("rol")=="alumno"){
+			window.location.href = "\Home.html";
+		}
+		if(localStorage.getItem("rol")=="profesor"){
+			window.location.href = "\Home.html";
+		}
 	}) 
 	.catch(e=>{
 		alert("Error de conexion")
         console.log(e);
 	})
 	
-	if(localStorage.getItem("rol")=="alumno"){
-		window.location.href = "\Home.html";
-	}
-	if(localStorage.getItem("rol")=="profesor"){
-		window.location.href = "\Home.html";
-	}
+	
 }
 function RecuperarContrasena(){
 	var usuario = document.getElementById("username").value
