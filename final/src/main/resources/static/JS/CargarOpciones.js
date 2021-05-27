@@ -2,18 +2,14 @@ var x = document.getElementById("escoger");
 
 
 
-	let mensaje = {
-		id: localStorage.getItem("id")
-	}
-    const url = "/usuarios/getProfesores"
-	let mensajeEnviar = JSON.stringify(mensaje)
+
+    const url = "/usuarios/getProfesores?id=" + localStorage.getItem("id")
 	// se realiza la llamada al servidor
 	fetch(url,{
 		method:'GET',
 		headers:{
 		     'Content-Type': 'application/json; chartset=UTF-8'
-		},
-		body: mensajeEnviar
+		}
 	})
 	.then(r=>{
 		if(r.status ==200){
