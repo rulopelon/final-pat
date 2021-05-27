@@ -1,8 +1,6 @@
 var x = document.getElementById("escoger");
 
 
-
-
     const url = "/usuarios/getProfesores?id=" + localStorage.getItem("id")
 	// se realiza la llamada al servidor
 	fetch(url,{
@@ -23,10 +21,15 @@ var x = document.getElementById("escoger");
 	})
 	.then(respuesta=>{
         console.log(respuesta)
-        // falta tratamiento de datos recibido 
-        // x.add(respuesta);
+        // falta tratamiento de datos recibido
+		let i = 0
+		while(respuesta[i] != undefined){
+			x.add(respuesta[i].nombre)
+			i++
+		} 
+        
 	}) 
-	.catch(e=>{
+	.catch(e=>{1848
 		alert("Error de conexion")
         console.log(e);
 	})
