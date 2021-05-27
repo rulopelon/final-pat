@@ -37,6 +37,7 @@ function reservar(){
 	})
 	.then(respuesta=>{
         // falta tratamiento de datos recibido
+		console.log(respuesta)
         
 	}) 
 	.catch(e=>{

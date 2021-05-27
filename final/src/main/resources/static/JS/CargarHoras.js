@@ -37,9 +37,9 @@ function actualizar(){
 			return r.json()
 
 		}else if(r.status==400){
-            alert("El usuario o la contraseña no cumplen los requisitos")
+            alert("Error")
         }else{
-			alert("Ha ocurrido un error al enviar el usuario y contraseña")
+			alert("Ha ocurrido un error")
 		}
 	})
 	.then(respuesta=>{
@@ -80,7 +80,7 @@ function actualizar(){
             ano = respuesta[i].ano
  
             if (dia == hoy.getDate() && mes == hoy.getMonth() && ano == hoy.getFullYear()){
-                document.getElementById(horat +":"+ minutot).style.backgroundColor = "rgb(237, 120, 153)"
+                document.getElementById(hora +":"+ minuto).style.backgroundColor = "rgb(237, 120, 153)"
             }
             i++
         }
