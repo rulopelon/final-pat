@@ -81,18 +81,12 @@ function actualizar(){
             dia = respuesta[i].dia
             mes = respuesta[i].mes
             ano = respuesta[i].ano
-
-            console.log(dia)
-            console.log(hoy.getDate())
-            
-
-
-            if (dia == hoy.getDate() && mes == (hoy.getMonth()+1) && ano == hoy.getFullYear()){
-                console.log("hola")
-                console.log(horat)
-                console.log(minutot)
-                document.getElementById(horat +":"+ minutot).style.backgroundColor = "rgb(237, 120, 153)"
+            if(hora>8 && hora< 20){
+                if (dia == hoy.getDate() && mes == (hoy.getMonth()+1) && ano == hoy.getFullYear()){
+                    document.getElementById(horat +":"+ minutot).style.backgroundColor = "rgb(237, 120, 153)"
+                }
             }
+            
             i++
         }
 	}) 
