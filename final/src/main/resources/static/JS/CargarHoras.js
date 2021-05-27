@@ -26,8 +26,13 @@ function actualizar(){
         minuto= 0;
         hora = hora +1
     }
-
-    let url = "/reservas/getReserva?id=" + localStorage.getItem("id")
+    let url
+    if(localStorage-getItem("rol") == "alumno"){
+        url = "/reservas/getReservasAlumno?id=" + localStorage.getItem("id")
+    }else{
+        url = "/reservas/getReservasProfesor?id=" + localStorage.getItem("id")
+    }
+   
     fetch(url,{
 		method:'GET',
 		headers:{
