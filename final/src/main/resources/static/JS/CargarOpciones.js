@@ -30,7 +30,7 @@ var x = document.getElementById("escoger");
 		} 
         
 	}) 
-	.catch(e=>{1848
+	.catch(e=>{
 		alert("Error de conexion")
         console.log(e);
 	})
