@@ -43,10 +43,10 @@ function EnviarLogIn(url){
         console.log(e);
 	})
 	
-	if(localStorage.getItem(rol)=="alumno"){
+	if(localStorage.getItem("rol")=="alumno"){
 		window.location.href = "\Home.html";
 	}
-	if(localStorage.getItem(rol)=="profesor"){
+	if(localStorage.getItem("rol")=="profesor"){
 		window.location.href = "\Home.html";
 	}
 }

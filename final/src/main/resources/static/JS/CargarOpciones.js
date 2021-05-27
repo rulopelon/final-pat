@@ -31,6 +31,4 @@ var x = document.getElementById("escoger");
         console.log(e);
 	})
 	
-	if(localStorage.getItem(rol)=="alumno"){
-		window.location.href = "\reservas.html";
-	}
+	
