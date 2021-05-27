@@ -37,6 +37,7 @@ function EnviarLogIn(url){
 		localStorage.setItem("rol",respuesta.rol);
 		localStorage.setItem("correo",respuesta.correo);
 		
+		console.log("Hola")
 		if(localStorage.getItem("rol")=="alumno"){
 			window.location.href = "\Home.html";
 		}
