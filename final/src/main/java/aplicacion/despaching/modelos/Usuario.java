@@ -45,8 +45,7 @@ private String correo;
 private String contrasena;
 @JsonProperty("rol")
 private String rol;
-@JsonIgnore
-private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
 
 @JsonProperty("id")
 public String getId() {
@@ -108,14 +107,8 @@ public void setRol(String rol) {
 this.rol = rol;
 }
 
-@JsonAnyGetter
-public Map<String, Object> getAdditionalProperties() {
-return this.additionalProperties;
-}
 
-@JsonAnySetter
-public void setAdditionalProperty(String name, Object value) {
-this.additionalProperties.put(name, value);
-}
+
+
 
 }
