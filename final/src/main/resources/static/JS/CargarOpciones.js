@@ -1,5 +1,5 @@
 var x = document.getElementById("escoger");
-x.add(option);
+
 
 
 	let mensaje = {
@@ -27,6 +27,8 @@ x.add(option);
 	})
 	.then(respuesta=>{
         console.log(respuesta)
+        // falta tratamiento de datos recibido 
+        // x.add(respuesta);
 	}) 
 	.catch(e=>{
 		alert("Error de conexion")

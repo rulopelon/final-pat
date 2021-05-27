@@ -44,7 +44,10 @@ function EnviarLogIn(url){
 	})
 	
 	if(localStorage.getItem(rol)=="alumno"){
-		window.location.href = "\reservas.html";
+		window.location.href = "\Home.html";
+	}
+	if(localStorage.getItem(rol)=="profesor"){
+		window.location.href = "\Home.html";
 	}
 }
 function RecuperarContrasena(){
