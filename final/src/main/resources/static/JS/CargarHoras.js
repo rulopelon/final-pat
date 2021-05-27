@@ -51,39 +51,42 @@ function actualizar(){
         let i = 0
         let hoy =  new Date()
         while(respuesta[i] != undefined){
-            let hora
-            let minuto
-            let dia
-            let mes
-            let ano
+            let horat
+            let minutot
+            let diat
+            let mest
+            let anot
             
 
             if(respuesta[i].hora < 10){
-                hora = "0" + respuesta[i].hora
+                horat = "0" + respuesta[i].hora
             }else{
-                hora = respuesta[i].hora
+                horat = respuesta[i].hora
             }
 
             if(respuesta[i].minuto < 10){
-                minuto = "00"
+                minutot = "00"
             }else if (respuesta[i].minuto < 20){
-                minuto = "10"
+                minutot = "10"
             } else if (respuesta[i].minuto < 30){
-                minuto = "20"
+                minutot = "20"
             } else if (respuesta[i].minuto < 40){
-                minuto = "30"
+                minutot = "30"
             } else if (respuesta[i].minuto < 50){
-                minuto = "40"
+                minutot = "40"
             } else {
-                minuto = "50"
+                minutot = "50"
             }
 
             dia = respuesta[i].dia
             mes = respuesta[i].mes
             ano = respuesta[i].ano
+
+            console.log(dia)
+            console.log(hoy.getDate())
  
             if (dia == hoy.getDate() && mes == hoy.getMonth() && ano == hoy.getFullYear()){
-                document.getElementById(hora +":"+ minuto).style.backgroundColor = "rgb(237, 120, 153)"
+                document.getElementById(horat +":"+ minutot).style.backgroundColor = "rgb(237, 120, 153)"
             }
             i++
         }
