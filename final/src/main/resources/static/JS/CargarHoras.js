@@ -25,7 +25,7 @@ function actualizar(){
         hora = hora +1
     }
 
-    let url = ""
+    /*let url = ""
     fetch(url,{
 		method:'GET',
 		headers:{
@@ -51,5 +51,6 @@ function actualizar(){
 		alert("Error de conexion")
         console.log(e);
 	})
+    */
 	
 }
