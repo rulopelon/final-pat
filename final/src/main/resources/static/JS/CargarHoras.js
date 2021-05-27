@@ -1,7 +1,4 @@
-
-
 actualizar();
-
 
 function actualizar(){
 
@@ -52,7 +49,7 @@ function actualizar(){
         console.log(respuesta)
         // falta tratamiento de datos recibido 
         let i = 0
-        let hoy =  new Date(Date.now)
+        let hoy =  new Date()
         while(respuesta[i] != undefined){
             let hora
             let minuto
