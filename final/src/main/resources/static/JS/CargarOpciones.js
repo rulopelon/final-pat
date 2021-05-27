@@ -19,12 +19,11 @@ var x = document.getElementById("escoger");
 		}
 	})
 	.then(respuesta=>{
-        console.log(respuesta)
         // falta tratamiento de datos recibido
 		let i = 0
 		while(respuesta[i] != undefined){
 			let option = document.createElement("option")
-			option.text= respuesta[i].nombre
+			option.text= respuesta[i].id
 			x.add(option)
 			i++
 		} 

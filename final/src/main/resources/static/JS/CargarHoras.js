@@ -25,7 +25,7 @@ function actualizar(){
         hora = hora +1
     }
 
-    /*let url = ""
+    let url = "/reservas/getReserva?id=" + localStorage.getItem("id")
     fetch(url,{
 		method:'GET',
 		headers:{
@@ -45,12 +45,50 @@ function actualizar(){
 	.then(respuesta=>{
         console.log(respuesta)
         // falta tratamiento de datos recibido 
-        // x.add(respuesta);
+        let i = 0
+        let hoy =  new Date(Date.now)
+        while(respuesta[i] != undefined){
+            let hora
+            let minuto
+            let dia
+            let mes
+            let ano
+            
+
+            if(respuesta[i].hora < 10){
+                hora = "0" + respuesta[i].hora
+            }else{
+                hora = respuesta[i].hora
+            }
+
+            if(respuesta[i].minuto < 10){
+                minuto = "00"
+            }else if (respuesta[i].minuto < 20){
+                minuto = "10"
+            } else if (respuesta[i].minuto < 30){
+                minuto = "20"
+            } else if (respuesta[i].minuto < 40){
+                minuto = "30"
+            } else if (respuesta[i].minuto < 50){
+                minuto = "40"
+            } else {
+                minuto = "50"
+            }
+
+            dia = respuesta[i].dia
+            mes = respuesta[i].mes
+            ano = respuesta[i].ano
+ 
+            if (dia == hoy.getDate() && mes == hoy.getMonth() && ano == hoy.getFullYear()){
+                document.getElementById(horat +":"+ minutot).style.backgroundColor = "rgb(237, 120, 153)"
+            }
+            i++
+        }
 	}) 
 	.catch(e=>{
 		alert("Error de conexion")
         console.log(e);
 	})
-    */
+    
 	
 }
