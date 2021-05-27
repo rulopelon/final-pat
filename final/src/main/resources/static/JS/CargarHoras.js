@@ -26,7 +26,7 @@ function actualizar(){
         minuto= 0;
         hora = hora +1
     }
-    let url
+    const url
     if(localStorage.getItem("rol") == "alumno"){
         url = "/reservas/getReservasAlumno?id=" + localStorage.getItem("id")
     }else{
@@ -40,8 +40,8 @@ function actualizar(){
 		}
 	})
 	.then(r=>{
-		if(r.status ==200){
-
+		if(r.status ===200){
+            return r.json()
 		}else if(r.status==400){
             alert("Error")
         }else{

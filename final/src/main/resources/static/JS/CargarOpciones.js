@@ -11,7 +11,6 @@ var x = document.getElementById("escoger");
 	.then(r=>{
 		if(r.status ==200){
 			return r.json()
-
 		}else if(r.status==400){
             alert("El usuario o la contraseña no cumplen los requisitos")
         }else{
