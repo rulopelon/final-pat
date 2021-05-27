@@ -2,13 +2,14 @@
 var usuario = localStorage.getItem("usuario");
 
 function reservar(){
-	const url = "/reservas/realizarReserva/=" + localStorage.getItem("id") + "/" + document.getElementById("escoger").value;
+	const url = "/reservas/realizarReserva/" + localStorage.getItem("id") + "/" + document.getElementById("escoger").value;
 	let fecha = document.getElementById("Fecha").value
 	let hora = document.getElementById("Hora").value
 	fecha = fecha.split("-")
 	hora = hora.split(":")
 	
 	let mensaje ={
+		id: Math.floor(Math.random() * 100001),
 		dia: fecha[2],
 		mes: fecha[1],
 		ano: fecha[0],
